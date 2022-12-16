@@ -12,8 +12,6 @@ public class RecursiveMultiplication {
 	public static int multiplicate(int a, int b) {
 		if (b == 0)
 			return 0;
-		if (b == 1)
-			return a;
 		if (b < 0)
 			return multiplicate(a, b * (-1)) * (-1);
 		return a + multiplicate(a, b - 1);

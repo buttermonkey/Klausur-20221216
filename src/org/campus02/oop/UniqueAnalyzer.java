@@ -10,11 +10,14 @@ public class UniqueAnalyzer extends LogEntryAnalyzer {
 
 	@Override
 	public void analyze() {
-		Set<String> uniqueMessages = new HashSet<>();
+		Map<String, Boolean> messageIsUnique = new HashMap<>();
 		for (LogEntry logEntry : super.getLogEntries()) {
-			uniqueMessages.add(logEntry.getMessage());
+			messageIsUnique.put(logEntry.getMessage(), !messageIsUnique.containsKey(logEntry.getMessage()));
 		}
-		result = uniqueMessages.stream().toList();
+		result = messageIsUnique.entrySet().stream()
+				.filter(Map.Entry::getValue)
+				.map(Map.Entry::getKey)
+				.toList();
 	}
 
 	public List<String> getResult() {

@@ -13,6 +13,7 @@ public class FilterAnalyzer extends LogEntryAnalyzer {
 
 	@Override
 	public void analyze() {
+		result.clear();
 		for (LogEntry logEntry : super.getLogEntries()) {
 			if (logEntry.getLogLevel().equals(logLevel))
 				result.add(logEntry);
