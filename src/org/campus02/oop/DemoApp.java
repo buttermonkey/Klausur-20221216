@@ -7,6 +7,11 @@ public class DemoApp {
 	public static void main(String[] args) {
 		System.out.println(createTestLogEntry()); // Sehen Sie sich diese Methode kurz an
 
+		LogEntryManager logEntryManager = new LogEntryManager();
+		for (int i = 0; i < 100; i++) {
+			logEntryManager.add(createTestLogEntry());
+		}
+
 		// TODO: Erstellen Sie ein Objekt von LogEntryManager
 		//  und rufen Sie die die Methode add(…) einhundert Mal auf,
 		//  um LogEntryManager mit den Testdaten zu befüllen.
