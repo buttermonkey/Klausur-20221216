@@ -12,6 +12,40 @@ public class DemoApp {
 			logEntryManager.add(createTestLogEntry());
 		}
 
+		System.out.println("=== FilterAnalyzer ===");
+		for (String logLevel : new String[]{ "debug", "info", "warning", "error", "fatal" }) {
+			FilterAnalyzer filterAnalyzer = new FilterAnalyzer(logLevel);
+			filterAnalyzer.setLogEntries(logEntryManager.getLogEntries());
+			filterAnalyzer.analyze();
+
+			System.out.println("There are " + filterAnalyzer.getResult().size() + " entries with log level '" + filterAnalyzer.getLogLevel() + "'");
+		}
+		System.out.println();
+
+		CountryAnalyzer countryAnalyzer = new CountryAnalyzer();
+		MaxLogEntryAnalyzer maxLogEntryAnalyzer = new MaxLogEntryAnalyzer();
+		UniqueAnalyzer uniqueAnalyzer = new UniqueAnalyzer();
+
+		for (LogEntryAnalyzer analyzer : new LogEntryAnalyzer[]{ countryAnalyzer, maxLogEntryAnalyzer, uniqueAnalyzer }) {
+			analyzer.setLogEntries(logEntryManager.getLogEntries());
+			analyzer.analyze();
+		}
+		System.out.println("=== CountryAnalyzer ===");
+		countryAnalyzer.getResult().forEach((country, number) -> {
+			System.out.println("There are " + number + " log entries with country ID '" + country + "'");
+		});
+		System.out.println();
+
+		System.out.println("=== MaxLogEntryAnalyzer ===");
+		System.out.println("Log entry with highest log entry ID is: " + maxLogEntryAnalyzer.getLogEntry());
+		System.out.println();
+
+		System.out.println("=== UniqueAnalyzer ===");
+		System.out.println("List of unique log messages:");
+		uniqueAnalyzer.getResult().stream().forEach(msg -> {
+			System.out.println("  " + msg);
+		});
+
 		// TODO: Erstellen Sie ein Objekt von LogEntryManager
 		//  und rufen Sie die die Methode add(…) einhundert Mal auf,
 		//  um LogEntryManager mit den Testdaten zu befüllen.
