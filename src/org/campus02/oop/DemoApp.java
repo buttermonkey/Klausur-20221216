@@ -18,7 +18,7 @@ public class DemoApp {
 			filterAnalyzer.setLogEntries(logEntryManager.getLogEntries());
 			filterAnalyzer.analyze();
 
-			System.out.println("There are " + filterAnalyzer.getResult().size() + " entries with log level '" + filterAnalyzer.getLogLevel() + "'");
+			System.out.println("  There are " + filterAnalyzer.getResult().size() + " entries with log level '" + filterAnalyzer.getLogLevel() + "'");
 		}
 		System.out.println();
 
@@ -32,18 +32,18 @@ public class DemoApp {
 		}
 		System.out.println("=== CountryAnalyzer ===");
 		countryAnalyzer.getResult().forEach((country, number) -> {
-			System.out.println("There are " + number + " log entries with country ID '" + country + "'");
+			System.out.println("  There are " + number + " log entries with country ID '" + country + "'");
 		});
 		System.out.println();
 
 		System.out.println("=== MaxLogEntryAnalyzer ===");
-		System.out.println("Log entry with highest log entry ID is: " + maxLogEntryAnalyzer.getLogEntry());
+		System.out.println("  Log entry with highest log entry ID is: " + maxLogEntryAnalyzer.getLogEntry());
 		System.out.println();
 
 		System.out.println("=== UniqueAnalyzer ===");
-		System.out.println("List of unique log messages:");
+		System.out.println("  List of unique log messages:");
 		uniqueAnalyzer.getResult().forEach(msg -> {
-			System.out.println("  " + msg);
+			System.out.println("    " + msg);
 		});
 	}
 
