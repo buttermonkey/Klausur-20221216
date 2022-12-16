@@ -13,4 +13,8 @@ public abstract class LogEntryAnalyzer {
 	public void setLogEntries(List<LogEntry> logEntries) {
 		this.logEntries = logEntries;
 	}
+
+	protected List<LogEntry> getLogEntries() {
+		return logEntries;
+	}
 }
