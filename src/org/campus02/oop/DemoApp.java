@@ -42,13 +42,9 @@ public class DemoApp {
 
 		System.out.println("=== UniqueAnalyzer ===");
 		System.out.println("List of unique log messages:");
-		uniqueAnalyzer.getResult().stream().forEach(msg -> {
+		uniqueAnalyzer.getResult().forEach(msg -> {
 			System.out.println("  " + msg);
 		});
-
-		// TODO: Erstellen Sie ein Objekt von LogEntryManager
-		//  und rufen Sie die die Methode add(…) einhundert Mal auf,
-		//  um LogEntryManager mit den Testdaten zu befüllen.
 	}
 
 

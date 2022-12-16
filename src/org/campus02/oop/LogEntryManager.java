@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogEntryManager {
-	private List<LogEntry> logEntries = new ArrayList<>();
+	private final List<LogEntry> logEntries = new ArrayList<>();
 
 	public LogEntryManager() {
 	}

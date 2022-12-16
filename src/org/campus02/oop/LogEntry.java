@@ -60,11 +60,11 @@ public class LogEntry {
 		this.applicationName = applicationName;
 	}
 
-	public String getiPAddress() {
+	public String getIPAddress() {
 		return iPAddress;
 	}
 
-	public void setiPAddress(String iPAddress) {
+	public void setIPAddress(String iPAddress) {
 		this.iPAddress = iPAddress;
 	}
 

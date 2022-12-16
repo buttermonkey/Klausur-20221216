@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CountryAnalyzer extends LogEntryAnalyzer {
-	private Map<String, Integer> result = new HashMap<>();
+	private final Map<String, Integer> result = new HashMap<>();
 
 	public CountryAnalyzer() {
 	}

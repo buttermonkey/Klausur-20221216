@@ -10,7 +10,7 @@ public class ArrayHelper {
 		for (int i = 0; i < lottoTipp.length; i++) {
 			System.out.println("Die Nummer an der Stelle " + (i+1) + " lautet: " + lottoTipp[i]);
 		}
-		System.out.println("Tipp ist " + (validateTipp(lottoTipp) ? "" : "nicht ") + "gueltig");
+		System.out.println("Tipp ist " + (validateTipp(lottoTipp) ? "" : "nicht ") + "gültig");
 	}
 
 	public static boolean validateTipp(int[] lottoTipp) {
